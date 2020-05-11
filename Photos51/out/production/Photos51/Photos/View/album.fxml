@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Photos.Controller.AlbumController"
+            prefHeight="600.0" prefWidth="900.0">
+
+    <top>
+        <AnchorPane>
+            <Label fx:id="welcomeNote" AnchorPane.topAnchor="0">Welcome!</Label>
+            <Button fx:id="searchButton" onAction="#handleSearch" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="0.0">Search</Button>
+            <Button fx:id="addButton" onAction="#handleAdd" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="50.0">Add</Button>
+            <Button fx:id="backButton" onAction="#handleBack" AnchorPane.topAnchor="20" AnchorPane.rightAnchor="0">Logout</Button>
+        </AnchorPane>
+
+    </top>
+    <center>
+        <AnchorPane>
+            <TableView fx:id="tableView" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="20">
+                <placeholder>
+                    <Label>No albums found.</Label>
+                </placeholder>
+                <columns>
+                    <TableColumn prefWidth="100.0" text="Name" fx:id="nameColumn" />
+                    <TableColumn prefWidth="100.0" text="Photos" fx:id="numColumn" />
+                    <TableColumn prefWidth="200.0" text="Date" fx:id="dateColumn" />
+                    <TableColumn prefWidth="150.0" text="Options" fx:id="optionColumn" />
+                </columns>
+            </TableView>
+        </AnchorPane>
+    </center>
+</BorderPane>

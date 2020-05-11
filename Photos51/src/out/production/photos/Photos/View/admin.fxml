@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Krysti Leong, April Dizon -->
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Photos.Controller.AdminController"
+            prefHeight="400.0" prefWidth="900.0">
+
+    <top>
+        <AnchorPane>
+            <Button fx:id = "backButton" onAction="#handleBack" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">Logout</Button>
+        </AnchorPane>
+    </top>
+    <center>
+        <AnchorPane>
+            <TableView fx:id="tableView" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0">
+                <placeholder><Label>No users found. Oh no!</Label></placeholder>
+                <columns>
+                    <TableColumn prefWidth="100.0" text="Username" fx:id="usernameColumn" />
+                    <TableColumn prefWidth="100.0" text="Password" fx:id="passwordColumn" />
+                    <TableColumn prefWidth="100.0" text="Albums" fx:id="albumsColumn" />
+                </columns>
+            </TableView>
+        </AnchorPane>
+    </center>
+    <bottom>
+        <AnchorPane>
+            <Label AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" text="New Username:" />
+            <TextField fx:id="usernameField" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0"></TextField>
+            <Label AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" text="New Password:" />
+            <TextField fx:id="passwordField" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0"></TextField>
+            <Button fx:id = "addButton" onAction="#handleAdd" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="150.0">Add User</Button>
+            <Button fx:id = "deleteButton" onAction="#handleDelete" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">Delete Selected User</Button>
+        </AnchorPane>
+    </bottom>
+
+</BorderPane>

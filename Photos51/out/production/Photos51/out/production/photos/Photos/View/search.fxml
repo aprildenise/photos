@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Photos.Controller.SearchController">
+
+    <top>
+        <AnchorPane>
+            <Button fx:id="backButton" onAction="#handleBack" text="Back" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0" />
+            <Button fx:id="logoutButton" onAction="#handleLogout" text="Logout" AnchorPane.rightAnchor="50" AnchorPane.topAnchor="0" />
+
+
+            <Label text="Search by date:" AnchorPane.leftAnchor="0" />
+            <TextField fx:id="startDate" text="Start date" AnchorPane.leftAnchor="100" />
+            <Label text="to" AnchorPane.leftAnchor="270" />
+            <TextField fx:id="endDate" text="End date" AnchorPane.leftAnchor="350" />
+            <Button fx:id="dateButton" onAction="#handleDateSearch" AnchorPane.leftAnchor="500">Search by date</Button>
+
+            <Label text="Search by tag:" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="50" />
+            <TextField fx:id="tag1" text="Tag=Value" AnchorPane.leftAnchor="100" AnchorPane.topAnchor="50" />
+            <ComboBox fx:id="operation" value="NA" AnchorPane.leftAnchor="270" AnchorPane.topAnchor="50">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="NA" />
+                        <String fx:value="and" />
+                        <String fx:value="or" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <TextField fx:id="tag2" text="Tag=Value" AnchorPane.leftAnchor="350" AnchorPane.topAnchor="50" />
+            <Button fx:id="tagButton" onAction="#handleTagSearch" AnchorPane.leftAnchor="500" AnchorPane.topAnchor="50">Search by tag</Button>
+        </AnchorPane>
+    </top>
+    <left>
+        <TableView fx:id="tableView" prefHeight="355.0" prefWidth="415.0" BorderPane.alignment="CENTER">
+            <placeholder>
+                <Label>No photos found.</Label>
+            </placeholder>
+            <columns>
+                <TableColumn fx:id="thumbColumn" prefWidth="100.0" text="Thumbnail" />
+                <TableColumn fx:id="captionColumn" prefWidth="100.0" text="Caption" />
+                <TableColumn fx:id="tagColumn" prefWidth="100.0" text="Tags" />
+                <TableColumn fx:id="tagColumn1" prefWidth="114.0" text="Date" />
+            </columns>
+        </TableView>
+    </left>
+    <right>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="485.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fx:id="imageView" fitHeight="252.0" fitWidth="355.0" layoutX="56.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" />
+                <Button fx:id="leftButton" layoutX="14.0" layoutY="170.0" onAction="#handleLeft" text="&lt;" />
+                <Button fx:id="rightButton" layoutX="429.0" layoutY="170.0" onAction="#handleRight" text="&gt;" />
+            </children></AnchorPane>
+    </right>
+    <bottom>
+        <Button fx:id="addButton" onAction="#handleAdd">Send photos to new Album.</Button>
+    </bottom>
+
+
+</BorderPane>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<!-- Krysti Leong, April Dizon -->
+<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Photos.Controller.PhotoController">
+
+    <top>
+        <AnchorPane>
+            <Label AnchorPane.topAnchor="0">Current Photos:</Label>
+            <Button fx:id="addButton" onAction="#handleAdd" AnchorPane.leftAnchor="00.0" AnchorPane.topAnchor="20">Add</Button>
+            <Button fx:id="backButton" onAction="#handleBack" text="Back" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="20" />
+            <Button fx:id="logoutButton" onAction="#handleLogout" text="Logout" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="20" />
+        </AnchorPane>
+    </top>
+    <left>
+        <TableView fx:id="tableView" prefHeight="355.0" prefWidth="415.0" BorderPane.alignment="CENTER">
+            <placeholder>
+                <Label>No photos found.</Label>
+            </placeholder>
+            <columns>
+                <TableColumn fx:id="thumbColumn" prefWidth="100.0" text="Thumbnail" />
+                <TableColumn fx:id="captionColumn" minWidth="0.0" prefWidth="174.0" text="Caption" />
+                <TableColumn fx:id="dateColumn" minWidth="0.0" prefWidth="140.0" text="Date" />
+            </columns>
+        </TableView>
+    </left>
+    <center>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="485.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fx:id="imageView" fitHeight="252.0" fitWidth="355.0" layoutX="56.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" />
+                <Button fx:id="copyButton" layoutX="70.0" layoutY="57.0" onAction="#handleCopy" text="Copy" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="0.0" />
+                <Button fx:id="moveButton" layoutX="70.0" layoutY="57.0" onAction="#handleMove" text="Move" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="0.0" />
+                <Button fx:id="deleteButton" layoutX="70.0" layoutY="57.0" onAction="#handleDelete" text="Delete" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="0.0" />
+                <Button fx:id="leftButton" layoutX="14.0" layoutY="170.0" onAction="#handleLeft" text="&lt;" />
+                <Button fx:id="rightButton" layoutX="429.0" layoutY="170.0" onAction="#handleRight" text="&gt;" />
+                <Label layoutX="58.0" layoutY="308.0" prefWidth="53.0" text="Caption" />
+                <TextField fx:id="captionTextField" layoutX="119.0" layoutY="304.0" prefHeight="25.0" prefWidth="247.0" />
+                <Button fx:id="saveCaptionButton" layoutX="388.0" layoutY="304.0" onAction="#handleSaveCaption" prefHeight="25.0" prefWidth="67.0" text="Save" />
+                <Button fx:id="addTagsButton" layoutX="388.0" layoutY="357.0" onAction="#handleAddTags" prefHeight="25.0" prefWidth="67.0" text="Add" />
+                <Label layoutX="58.0" layoutY="361.0" prefWidth="53.0" text="Tags" />
+                <ComboBox fx:id="presetTags" layoutX="119.0" layoutY="332.0" prefHeight="25.0" prefWidth="118.0" promptText="choose a tag" />
+                <TextField fx:id="tagType" layoutX="119.0" layoutY="357.0" prefHeight="25.0" prefWidth="119.0" />
+                <TextField fx:id="tagValue" layoutX="256.0" layoutY="357.0" prefHeight="25.0" prefWidth="110.0" />
+                <TableView fx:id="tagTableView" layoutX="1.0" layoutY="392.0" prefHeight="163.0" prefWidth="483.0">
+                    <columns>
+                        <TableColumn fx:id="tagTypeColumn" minWidth="0.0" prefWidth="161.0" text="Tag Type" />
+                        <TableColumn fx:id="tagValueColumn" minWidth="0.0" prefWidth="161.0" text="Tag Column" />
+                        <TableColumn fx:id="tagOptionColumn" minWidth="0.0" prefWidth="161.0" text="Tag Options" />
+                    </columns>
+                </TableView>
+
+            </children></AnchorPane>
+    </center>
+</BorderPane>
